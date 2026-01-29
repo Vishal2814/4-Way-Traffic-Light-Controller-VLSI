@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/VLSI/Traffic light controller/simulation/modelsim
+vtb_traffic_controller_4way
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1769500973
+!i10b 1
+!s100 DfG2KmR7?>R=LE]^z^hdH2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I6VEMkY4GU4i]Mi<`^XmA12
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1769500934
+8D:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv
+FD:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv
+!i122 1
+L0 3 81
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1769500973.000000
+!s107 D:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/VLSI/Traffic light controller|D:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work {+incdir+D:/VLSI/Traffic light controller}
+Z8 tCvgOpt 0
+vtraffic_controller_4way
+R1
+R2
+!i10b 1
+!s100 zm2_D6A@139g1;dKfWGe;1
+R3
+IEKRiZn4AmR@mM>I]W<J=P2
+R4
+S1
+R0
+w1769497760
+8D:/VLSI/Traffic light controller/traffic_controller_4way.sv
+FD:/VLSI/Traffic light controller/traffic_controller_4way.sv
+!i122 0
+L0 1 123
+R5
+r1
+!s85 0
+31
+!s108 1769500972.000000
+!s107 D:/VLSI/Traffic light controller/traffic_controller_4way.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/VLSI/Traffic light controller|D:/VLSI/Traffic light controller/traffic_controller_4way.sv|
+!i113 1
+R6
+R7
+R8

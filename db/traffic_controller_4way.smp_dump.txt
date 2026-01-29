@@ -1,0 +1,7 @@
+
+State Machine - |traffic_controller_4way|current_state
+Name current_state.S_EW_YELLOW current_state.S_EW_GREEN current_state.S_NS_YELLOW current_state.S_NS_GREEN 
+current_state.S_NS_GREEN 0 0 0 0 
+current_state.S_NS_YELLOW 0 0 1 1 
+current_state.S_EW_GREEN 0 1 0 1 
+current_state.S_EW_YELLOW 1 0 0 1 

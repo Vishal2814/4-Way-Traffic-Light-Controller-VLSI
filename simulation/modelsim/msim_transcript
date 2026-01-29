@@ -1,0 +1,153 @@
+# Reading pref.tcl
+# do traffic_controller_4way_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/Users/Vishal/Software/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+D:/VLSI/Traffic\ light\ controller {D:/VLSI/Traffic light controller/traffic_controller_4way.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:32:52 on Jan 27,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/VLSI/Traffic light controller" D:/VLSI/Traffic light controller/traffic_controller_4way.sv 
+# -- Compiling module traffic_controller_4way
+# 
+# Top level modules:
+# 	traffic_controller_4way
+# End time: 13:32:53 on Jan 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+D:/VLSI/Traffic\ light\ controller {D:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:32:53 on Jan 27,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/VLSI/Traffic light controller" D:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv 
+# -- Compiling module tb_traffic_controller_4way
+# 
+# Top level modules:
+# 	tb_traffic_controller_4way
+# End time: 13:32:53 on Jan 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_traffic_controller_4way
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_traffic_controller_4way 
+# Start time: 13:32:53 on Jan 27,2026
+# Loading sv_std.std
+# Loading work.tb_traffic_controller_4way
+# Loading work.traffic_controller_4way
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# TIME | STATE | TIMER | NS | EW
+# -------------------------------
+# 3000000000000 |  0    |  0    | G  | R
+# 4000000000000 |  0    |  1    | G  | R
+# 5000000000000 |  0    |  2    | G  | R
+# 6000000000000 |  0    |  3    | G  | R
+# 7000000000000 |  0    |  4    | G  | R
+# 8000000000000 |  0    |  5    | G  | R
+# 9000000000000 |  0    |  6    | G  | R
+# 10000000000000 |  0    |  7    | G  | R
+# 11000000000000 |  0    |  8    | G  | R
+# 12000000000000 |  0    |  9    | G  | R
+# 13000000000000 |  1    |  0    | Y  | R
+# 14000000000000 |  1    |  1    | Y  | R
+# 15000000000000 |  1    |  2    | Y  | R
+# 16000000000000 |  2    |  0    | R  | G
+# 17000000000000 |  2    |  1    | R  | G
+# 18000000000000 |  2    |  2    | R  | G
+# 19000000000000 |  2    |  3    | R  | G
+# 20000000000000 |  2    |  4    | R  | G
+# 21000000000000 |  2    |  5    | R  | G
+# 22000000000000 |  2    |  6    | R  | G
+# 23000000000000 |  2    |  7    | R  | G
+# 24000000000000 |  2    |  8    | R  | G
+# 25000000000000 |  2    |  9    | R  | G
+# 26000000000000 |  3    |  0    | R  | Y
+# 27000000000000 |  3    |  1    | R  | Y
+# 28000000000000 |  3    |  2    | R  | Y
+# 29000000000000 |  0    |  0    | G  | R
+# 30000000000000 |  0    |  1    | G  | R
+# 31000000000000 |  0    |  2    | G  | R
+# 32000000000000 |  0    |  3    | G  | R
+# 33000000000000 |  0    |  4    | G  | R
+# 34000000000000 |  0    |  5    | G  | R
+# 35000000000000 |  0    |  6    | G  | R
+# 36000000000000 |  0    |  7    | G  | R
+# 37000000000000 |  0    |  8    | G  | R
+# 38000000000000 |  0    |  9    | G  | R
+# 39000000000000 |  1    |  0    | Y  | R
+# 40000000000000 |  1    |  1    | Y  | R
+# 41000000000000 |  1    |  2    | Y  | R
+# 42000000000000 |  2    |  0    | R  | G
+# 43000000000000 |  2    |  1    | R  | G
+# 44000000000000 |  2    |  2    | R  | G
+# 45000000000000 |  2    |  3    | R  | G
+# 46000000000000 |  2    |  4    | R  | G
+# 47000000000000 |  2    |  5    | R  | G
+# 48000000000000 |  2    |  6    | R  | G
+# 49000000000000 |  2    |  7    | R  | G
+# 50000000000000 |  2    |  8    | R  | G
+# 51000000000000 |  2    |  9    | R  | G
+# 52000000000000 |  3    |  0    | R  | Y
+# 53000000000000 |  3    |  1    | R  | Y
+# 54000000000000 |  3    |  2    | R  | Y
+# 55000000000000 |  0    |  0    | G  | R
+# 56000000000000 |  0    |  1    | G  | R
+# 57000000000000 |  0    |  2    | G  | R
+# 58000000000000 |  0    |  3    | G  | R
+# 59000000000000 |  0    |  4    | G  | R
+# 60000000000000 |  0    |  5    | G  | R
+# 61000000000000 |  0    |  6    | G  | R
+# 62000000000000 |  0    |  7    | G  | R
+# 63000000000000 |  0    |  8    | G  | R
+# 64000000000000 |  0    |  9    | G  | R
+# 65000000000000 |  1    |  0    | Y  | R
+# 66000000000000 |  1    |  1    | Y  | R
+# 67000000000000 |  1    |  2    | Y  | R
+# 68000000000000 |  2    |  0    | R  | G
+# 69000000000000 |  2    |  1    | R  | G
+# 70000000000000 |  2    |  2    | R  | G
+# 71000000000000 |  2    |  3    | R  | G
+# 72000000000000 |  2    |  4    | R  | G
+# 73000000000000 |  2    |  5    | R  | G
+# 74000000000000 |  2    |  6    | R  | G
+# 75000000000000 |  2    |  7    | R  | G
+# 76000000000000 |  2    |  8    | R  | G
+# 77000000000000 |  2    |  9    | R  | G
+# 78000000000000 |  3    |  0    | R  | Y
+# 79000000000000 |  3    |  1    | R  | Y
+# 80000000000000 |  3    |  2    | R  | Y
+# 81000000000000 |  0    |  0    | G  | R
+# 82000000000000 |  0    |  1    | G  | R
+# 83000000000000 |  0    |  2    | G  | R
+# 84000000000000 |  0    |  3    | G  | R
+# 85000000000000 |  0    |  4    | G  | R
+# 86000000000000 |  0    |  5    | G  | R
+# 87000000000000 |  0    |  6    | G  | R
+# 88000000000000 |  0    |  7    | G  | R
+# 89000000000000 |  0    |  8    | G  | R
+# 90000000000000 |  0    |  9    | G  | R
+# 91000000000000 |  1    |  0    | Y  | R
+# 92000000000000 |  1    |  1    | Y  | R
+# 93000000000000 |  1    |  2    | Y  | R
+# 94000000000000 |  2    |  0    | R  | G
+# 95000000000000 |  2    |  1    | R  | G
+# 96000000000000 |  2    |  2    | R  | G
+# 97000000000000 |  2    |  3    | R  | G
+# 98000000000000 |  2    |  4    | R  | G
+# 99000000000000 |  2    |  5    | R  | G
+# 100000000000000 |  2    |  6    | R  | G
+# ** Note: $stop    : D:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv(80)
+#    Time: 100 sec  Iteration: 0  Instance: /tb_traffic_controller_4way
+# Break in Module tb_traffic_controller_4way at D:/VLSI/Traffic light controller/tb_traffic_controller_4way.sv line 80
+set PrefMain(saveFile) sim_log.txt
+# sim_log.txt
+set PrefMain(file) sim_log.txt

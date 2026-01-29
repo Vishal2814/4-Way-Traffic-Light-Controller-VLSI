@@ -1,0 +1,125 @@
+module traffic_controller_4way #(
+    // ===== PARAMETERIZED TIMING (clock cycles) =====
+    parameter int T_GREEN  = 10,
+    parameter int T_YELLOW = 3
+
+    // ===== FIXED TIMING VERSION (alternative) =====
+    // localparam int T_GREEN  = 10;
+    // localparam int T_YELLOW = 3;
+)(
+    input  logic clk,
+    input  logic rst_n,
+
+    // North-South lights
+    output logic NS_red,
+    output logic NS_yellow,
+    output logic NS_green,
+
+    // East-West lights
+    output logic EW_red,
+    output logic EW_yellow,
+    output logic EW_green
+);
+
+    // ==============================
+    // State registers
+    // ==============================
+    state_t current_state, next_state;
+
+    // ==============================
+    // Timer
+    // ==============================
+    logic [$clog2(T_GREEN+1)-1:0] timer;
+    logic timer_done;
+
+    // ==============================
+    // State register (sequential)
+    // ==============================
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            current_state <= S_NS_GREEN;
+        else
+            current_state <= next_state;
+    end
+
+    // ==============================
+    // Timer logic
+    // ==============================
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            timer <= '0;
+        else if (current_state != next_state)
+            timer <= '0;
+        else
+            timer <= timer + 1'b1;
+    end
+
+    // ==============================
+    // Timer expiry logic
+    // ==============================
+    always_comb begin
+        case (current_state)
+            S_NS_GREEN,
+            S_EW_GREEN:   timer_done = (timer == T_GREEN-1);
+
+            S_NS_YELLOW,
+            S_EW_YELLOW:  timer_done = (timer == T_YELLOW-1);
+
+            default:      timer_done = 1'b0;
+        endcase
+    end
+
+    // ==============================
+    // Next-state logic
+    // ==============================
+    always_comb begin
+        next_state = current_state;
+
+        if (timer_done) begin
+            case (current_state)
+                S_NS_GREEN:   next_state = S_NS_YELLOW;
+                S_NS_YELLOW:  next_state = S_EW_GREEN;
+                S_EW_GREEN:   next_state = S_EW_YELLOW;
+                S_EW_YELLOW:  next_state = S_NS_GREEN;
+                default:      next_state = S_NS_GREEN;
+            endcase
+        end
+    end
+
+    // ==============================
+    // Output logic (Moore)
+    // ==============================
+    always_comb begin
+        // default OFF
+        NS_red    = 1'b0;
+        NS_yellow = 1'b0;
+        NS_green  = 1'b0;
+
+        EW_red    = 1'b0;
+        EW_yellow = 1'b0;
+        EW_green  = 1'b0;
+
+        case (current_state)
+            S_NS_GREEN: begin
+                NS_green = 1'b1;
+                EW_red   = 1'b1;
+            end
+
+            S_NS_YELLOW: begin
+                NS_yellow = 1'b1;
+                EW_red    = 1'b1;
+            end
+
+            S_EW_GREEN: begin
+                EW_green = 1'b1;
+                NS_red   = 1'b1;
+            end
+
+            S_EW_YELLOW: begin
+                EW_yellow = 1'b1;
+                NS_red    = 1'b1;
+            end
+        endcase
+    end
+
+endmodule
